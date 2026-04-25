@@ -33,6 +33,20 @@ h2 {
     letter-spacing: 2px;
 }
 
+footer {
+    position: fixed;       /* Lo fija en la pantalla */
+    bottom: 0;             /* Lo coloca al fondo */
+    left: 0;               /* Lo alinea a la izquierda */
+    width: 100%;           /* Que ocupe todo el ancho */
+    text-align: center;    /* Centrado */
+    padding: 20px;
+    font-size: 14px;
+    color: #555;
+    background-color: #f9f9f9; /* Fondo claro para diferenciar */
+    border-top: 1px solid #ccc; /* Línea superior */
+}
+
+
 .input-group {
     display: flex;
     flex-direction: column;

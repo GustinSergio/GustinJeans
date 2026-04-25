@@ -13,19 +13,55 @@ if(!isset($_SESSION['wishlist'])){
     $_SESSION['wishlist'] = [];
 }
 
-// Catálogo de productos con categorías
+// Catálogo de productos con categorías (solo prendas inferiores)
 $productos = [
-    1 => ["nombre"=>"Jean clásico azul", "precio"=>120000, "imagen"=>"img/jean1.jpg", "categoria"=>"hombre"],
-    2 => ["nombre"=>"Camiseta negra básica", "precio"=>45000, "imagen"=>"img/camiseta1.jpg", "categoria"=>"hombre"],
-    3 => ["nombre"=>"Chaqueta denim", "precio"=>180000, "imagen"=>"img/chaqueta1.jpg", "categoria"=>"hombre"],
-    4 => ["nombre"=>"Vestido rojo elegante", "precio"=>220000, "imagen"=>"img/vestido1.jpg", "categoria"=>"mujer"],
-    5 => ["nombre"=>"Blusa blanca oversize", "precio"=>95000, "imagen"=>"img/blusa1.jpg", "categoria"=>"mujer"],
-    6 => ["nombre"=>"Chaqueta bomber negra", "precio"=>200000, "imagen"=>"img/chaqueta2.jpg", "categoria"=>"hombre"],
-    7 => ["nombre"=>"Jean skinny gris", "precio"=>130000, "imagen"=>"img/jean3.jpg", "categoria"=>"hombre"],
-    8 => ["nombre"=>"Camiseta estampada", "precio"=>60000, "imagen"=>"img/camiseta3.jpg", "categoria"=>"hombre"],
-    9 => ["nombre"=>"Chaqueta de cuero", "precio"=>250000, "imagen"=>"img/chaqueta3.jpg", "categoria"=>"hombre"],
-    10 => ["nombre"=>"Conjunto deportivo niños", "precio"=>80000, "imagen"=>"img/nino1.jpg", "categoria"=>"nino"],
+    // --- HOMBRE ---
+    1 => ["nombre"=>"Jean clásico azul", "precio"=>59900, "imagen"=>"img/jean1.jpg", "categoria"=>"hombre"],
+    2 => ["nombre"=>"Jean skinny negro", "precio"=>69900, "imagen"=>"img/jean2.jpg", "categoria"=>"hombre"],
+    3 => ["nombre"=>"Jean recto gris", "precio"=>74900, "imagen"=>"img/jean3.jpg", "categoria"=>"hombre"],
+    4 => ["nombre"=>"Jean desgastado azul", "precio"=>72900, "imagen"=>"img/jean4.jpg", "categoria"=>"hombre"],
+    5 => ["nombre"=>"Jean cargo", "precio"=>73900, "imagen"=>"img/jean5.jpg", "categoria"=>"hombre"],
+    6 => ["nombre"=>"Jean slim fit", "precio"=>69900, "imagen"=>"img/jean6.jpg", "categoria"=>"hombre"],
+    7 => ["nombre"=>"Pantalón cargo verde", "precio"=>69900, "imagen"=>"img/pantalon1.jpg", "categoria"=>"hombre"],
+    8 => ["nombre"=>"Pantalón recto beige", "precio"=>74900, "imagen"=>"img/pantalon2.jpg", "categoria"=>"hombre"],
+    9 => ["nombre"=>"Pantalón jogger gris", "precio"=>69900, "imagen"=>"img/pantalon3.jpg", "categoria"=>"hombre"],
+    10 => ["nombre"=>"Short denim azul", "precio"=>39900, "imagen"=>"img/short1.jpg", "categoria"=>"hombre"],
+
+    // --- MUJER ---
+    11 => ["nombre"=>"Jean bota ancha", "precio"=>69900, "imagen"=>"img/jean7.jpg", "categoria"=>"mujer"],
+    12 => ["nombre"=>"Jean mom fit", "precio"=>74900, "imagen"=>"img/jean8.jpg", "categoria"=>"mujer"],
+    13 => ["nombre"=>"Jean rasgado rodillas", "precio"=>74900, "imagen"=>"img/jean9.jpg", "categoria"=>"mujer"],
+    14 => ["nombre"=>"Jean boyfriend", "precio"=>73900, "imagen"=>"img/jean10.jpg", "categoria"=>"mujer"],
+    15 => ["nombre"=>"Pantalón palazzo", "precio"=>74900, "imagen"=>"img/pantalon4.jpg", "categoria"=>"mujer"],
+    16 => ["nombre"=>"Pantalón culotte", "precio"=>73900, "imagen"=>"img/pantalon5.jpg", "categoria"=>"mujer"],
+    17 => ["nombre"=>"Pantalón flare", "precio"=>74900, "imagen"=>"img/pantalon6.jpg", "categoria"=>"mujer"],
+    18 => ["nombre"=>"Falda denim azul", "precio"=>49900, "imagen"=>"img/falda1.jpg", "categoria"=>"mujer"],
+    19 => ["nombre"=>"Falda corta negra", "precio"=>45900, "imagen"=>"img/falda2.jpg", "categoria"=>"mujer"],
+    20 => ["nombre"=>"Falda midi gris", "precio"=>47900, "imagen"=>"img/falda3.jpg", "categoria"=>"mujer"],
+    21 => ["nombre"=>"Falda plisada blanca", "precio"=>49900, "imagen"=>"img/falda4.jpg", "categoria"=>"mujer"],
+    22 => ["nombre"=>"Falda lápiz", "precio"=>52900, "imagen"=>"img/falda5.jpg", "categoria"=>"mujer"],
+    23 => ["nombre"=>"Falda cargo", "precio"=>54900, "imagen"=>"img/falda6.jpg", "categoria"=>"mujer"],
+    24 => ["nombre"=>"Short blanco", "precio"=>42900, "imagen"=>"img/short2.jpg", "categoria"=>"mujer"],
+    25 => ["nombre"=>"Short rasgado", "precio"=>43900, "imagen"=>"img/short3.jpg", "categoria"=>"mujer"],
+    26 => ["nombre"=>"Short beige", "precio"=>42900, "imagen"=>"img/short4.jpg", "categoria"=>"mujer"],
+    27 => ["nombre"=>"Short denim negro", "precio"=>44900, "imagen"=>"img/short5.jpg", "categoria"=>"mujer"],
+    28 => ["nombre"=>"Short azul claro", "precio"=>42900, "imagen"=>"img/short6.jpg", "categoria"=>"mujer"],
+
+    // --- NIÑO ---
+    29 => ["nombre"=>"Jean clásico niños azul", "precio"=>49900, "imagen"=>"img/nino_jean1.jpg", "categoria"=>"nino"],
+    30 => ["nombre"=>"Jean skinny niños negro", "precio"=>52900, "imagen"=>"img/nino_jean2.jpg", "categoria"=>"nino"],
+    31 => ["nombre"=>"Jean recto niños gris", "precio"=>53900, "imagen"=>"img/nino_jean3.jpg", "categoria"=>"nino"],
+    32 => ["nombre"=>"Short denim niños azul", "precio"=>39900, "imagen"=>"img/nino_short1.jpg", "categoria"=>"nino"],
+    33 => ["nombre"=>"Short cargo niños beige", "precio"=>42900, "imagen"=>"img/nino_short2.jpg", "categoria"=>"nino"],
+    34 => ["nombre"=>"Leggings deportivos niños", "precio"=>45900, "imagen"=>"img/nino_leggings1.jpg", "categoria"=>"nino"],
+    35 => ["nombre"=>"Leggings básicos niños negros", "precio"=>44900, "imagen"=>"img/nino_leggings2.jpg", "categoria"=>"nino"],
+    36 => ["nombre"=>"Falda denim niñas azul", "precio"=>47900, "imagen"=>"img/nino_falda1.jpg", "categoria"=>"nino"],
+    37 => ["nombre"=>"Short niños gris", "precio"=>43900, "imagen"=>"img/nino_short3.jpg", "categoria"=>"nino"],
+    38 => ["nombre"=>"Jean niños azul claro", "precio"=>52900, "imagen"=>"img/nino_jean4.jpg", "categoria"=>"nino"],
+    39 => ["nombre"=>"Leggings niñas rosa", "precio"=>45900, "imagen"=>"img/nino_leggings3.jpg", "categoria"=>"nino"],
+    40 => ["nombre"=>"Falda niñas negra", "precio"=>46900, "imagen"=>"img/nino_falda2.jpg", "categoria"=>"nino"],
 ];
+
 
 $busqueda = "";
 if(isset($_GET['buscar'])){
@@ -136,13 +172,21 @@ if(isset($_POST['wishlist'])){
             foreach($_SESSION['carrito'] as $index => $item){ 
                 $total += $item['precio'];
             ?>
-                <li>
-                    <?php echo $item['nombre']." - Talla ".$item['talla']." - $".number_format($item['precio'],0,',','.'); ?> COP
-                    <form method="post" style="display:inline;">
-                        <input type="hidden" name="index" value="<?php echo $index; ?>">
-                        <button type="submit" name="eliminar">Eliminar</button>
-                    </form>
-                </li>
+               <li style="display:flex; align-items:center; margin-bottom:10px;">
+    <!-- Miniatura del producto -->
+    <img src="<?php echo $item['imagen']; ?>" alt="<?php echo $item['nombre']; ?>" 
+         style="width:50px; height:auto; margin-right:10px; border-radius:5px;">
+    
+    <!-- Info del producto -->
+    <div>
+        <?php echo $item['nombre']." - Talla ".$item['talla']." - $".number_format($item['precio'],0,',','.'); ?> COP
+        <form method="post" style="display:inline;">
+            <input type="hidden" name="index" value="<?php echo $index; ?>">
+            <button type="submit" name="eliminar">Eliminar</button>
+        </form>
+    </div>
+</li>
+
             <?php } ?>
         </ul>
         <p><strong>Total: $<?php echo number_format($total,0,',','.'); ?> COP</strong></p>
