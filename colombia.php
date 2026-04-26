@@ -2,11 +2,11 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Colombia - GustinJeans</title>
+  <title>Selecciona tu ciudad - GustinJeans</title>
   <style>
     body {
       font-family: Arial, sans-serif;
-      max-width: 800px;
+      max-width: 600px;
       margin: 0 auto;
       padding: 20px;
       line-height: 1.6;
@@ -15,77 +15,50 @@
       text-align: center;
       margin-bottom: 20px;
     }
-    .city-list {
-      list-style: none;
-      padding: 0;
+    .form-group {
+      text-align: center;
+      margin-top: 20px;
     }
-    .city-list li {
-      margin: 8px 0;
+    select {
+      padding: 8px;
+      font-size: 16px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
     }
-    .city-list a {
-      text-decoration: none;
-      color: #333;
-      font-weight: bold;
+    button {
+      margin-top: 15px;
+      padding: 10px 20px;
+      font-size: 16px;
+      border: none;
+      border-radius: 5px;
+      background: #333;
+      color: #fff;
       cursor: pointer;
     }
-    .city-info {
-      display: none;
-      margin-top: 10px;
-      padding: 10px;
-      border: 1px solid #ccc;
-      background: #f9f9f9;
+    button:hover {
+      background: #555;
     }
   </style>
 </head>
 <body>
-  <h1>Ciudades de Colombia</h1>
-  <p>Haz clic en una ciudad para ver más información:</p>
+  <h1>Selecciona tu ciudad</h1>
+  <p>Por favor elige la ciudad donde te encuentras:</p>
 
-  <ul class="city-list">
-    <li><a onclick="showInfo('bogota')">Bogotá</a></li>
-    <li><a onclick="showInfo('medellin')">Medellín</a></li>
-    <li><a onclick="showInfo('cali')">Cali</a></li>
-    <li><a onclick="showInfo('cartagena')">Cartagena</a></li>
-    <li><a onclick="showInfo('barranquilla')">Barranquilla</a></li>
-  </ul>
-
-  <!-- Info de cada ciudad -->
-  <div id="bogota" class="city-info">
-    <h3>Bogotá</h3>
-    <p>Capital de Colombia, ubicada en la región andina. Conocida por su cultura, museos y el cerro de Monserrate.</p>
-  </div>
-
-  <div id="medellin" class="city-info">
-    <h3>Medellín</h3>
-    <p>La ciudad de la eterna primavera, famosa por su clima agradable, innovación y el Metro.</p>
-  </div>
-
-  <div id="cali" class="city-info">
-    <h3>Cali</h3>
-    <p>Capital de la salsa, reconocida por su música, baile y ambiente festivo.</p>
-  </div>
-
-  <div id="cartagena" class="city-info">
-    <h3>Cartagena</h3>
-    <p>Ciudad costera con murallas coloniales, playas y gran atractivo turístico.</p>
-  </div>
-
-  <div id="barranquilla" class="city-info">
-    <h3>Barranquilla</h3>
-    <p>Ciudad portuaria famosa por su Carnaval, declarado Patrimonio Cultural.</p>
-  </div>
-
-  <script>
-    function showInfo(cityId) {
-      // Ocultar todas las secciones
-      var infos = document.querySelectorAll('.city-info');
-      infos.forEach(function(info) {
-        info.style.display = 'none';
-      });
-      // Mostrar solo la seleccionada
-      document.getElementById(cityId).style.display = 'block';
-    }
-  </script>
+  <form method="post" action="procesar_ciudad.php">
+    <div class="form-group">
+      <select name="ciudad" required>
+        <option value="">-- Selecciona una ciudad --</option>
+        <option value="bogota">Bogotá</option>
+        <option value="medellin">Medellín</option>
+        <option value="cali">Cali</option>
+        <option value="cartagena">Cartagena</option>
+        <option value="barranquilla">Barranquilla</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <button type="submit">Confirmar</button>
+    </div>
+  </form>
 </body>
 </html>
 
